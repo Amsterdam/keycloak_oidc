@@ -6,7 +6,7 @@ help:                           ## Show this help.
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 release: test dist              ## Test, create a distribution and upload it to pypi
-	twine upload dist/*
+	twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
 dist:                           ## Create a distribution
 	$(PYTHON) setup.py sdist bdist_wheel

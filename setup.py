@@ -31,14 +31,18 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 
-install_requires = [
+install_requirements = [
     'mozilla-django-oidc~=1.2',
 ]
 
-tests_requires = [
+test_requirements = [
     'pytest',
     'pytest-cov'
 ]
+
+extra_requirements = {
+    'dev': test_requirements + ['twine'],
+}
 
 setup(
     name='datapunt-keycloak-oidc',
@@ -50,13 +54,16 @@ setup(
 
     description='A simple Django app to use keycloak over OIDC',
     long_description=README,
-    url='https://github.com/Amsterdam/',
+    long_description_content_type="text/markdown",
+    url='https://github.com/Amsterdam/keycloak_oidc',
 
     packages=find_packages(),
-    install_requires=install_requires,
+    install_requires=install_requirements,
 
     cmdclass={'test': PyTest},
-    tests_require=tests_requires,
+    tests_require=test_requirements,
+
+    extras_require=extra_requirements,
 
     classifiers=[
         'Environment :: Web Environment',
