@@ -9,6 +9,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.contenttypes',
     'keycloak_oidc',
+
+    'rest_framework'    # used to test InAuthGroup permission
 ]
 
 
