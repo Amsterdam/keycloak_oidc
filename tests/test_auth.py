@@ -69,4 +69,4 @@ class TestAuth(TestCase):
 
         oidc_auth_backend = OIDCAuthenticationBackend()
         userinfo = oidc_auth_backend.get_userinfo(access_token="", id_token="", payload={})
-        self.assertEquals(userinfo.get('roles'), ['role1', 'role2'], "Unexpected roles returned in get_userinfo")
+        self.assertEqual(userinfo.get('roles'), ['role1', 'role2'], "Unexpected roles returned in get_userinfo")

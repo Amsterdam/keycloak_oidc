@@ -46,7 +46,7 @@ extra_requirements = {
 
 setup(
     name='datapunt-keycloak-oidc',
-    version='0.1',
+    version='0.2',
     license='Mozilla Public License 2.0',
 
     author='Datapunt Amsterdam',
