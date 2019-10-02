@@ -1,3 +1,5 @@
+import os
+
 from keycloak_oidc.default_settings import *  # noqa
 
 SECRET_KEY = 'testing'
@@ -21,7 +23,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'keycloak_oidc.urls'
+ROOT_URLCONF = 'tests.urls'
 
 TEMPLATES = [
     {
@@ -57,3 +59,17 @@ AUTHENTICATION_BACKENDS = [
     'keycloak_oidc.auth.OIDCAuthenticationBackend',
     'django.contrib.auth.backends.ModelBackend'
 ]
+
+OIDC_RP_CLIENT_ID = 'test'
+OIDC_RP_CLIENT_SECRET = 'test'
+
+OIDC_OP_AUTHORIZATION_ENDPOINT = os.getenv(
+    'OIDC_OP_AUTHORIZATION_ENDPOINT', 'https://iam.amsterdam.nl/auth/realms/datapunt-acc/protocol/openid-connect/auth')
+OIDC_OP_TOKEN_ENDPOINT = os.getenv(
+    'OIDC_OP_TOKEN_ENDPOINT', 'https://iam.amsterdam.nl/auth/realms/datapunt-acc/protocol/openid-connect/token')
+OIDC_OP_USER_ENDPOINT = os.getenv(
+    'OIDC_OP_USER_ENDPOINT', 'https://iam.amsterdam.nl/auth/realms/datapunt-acc/protocol/openid-connect/userinfo')
+OIDC_OP_JWKS_ENDPOINT = os.getenv(
+    'OIDC_OP_JWKS_ENDPOINT', 'https://iam.amsterdam.nl/auth/realms/datapunt-acc/protocol/openid-connect/certs')
+OIDC_OP_LOGOUT_ENDPOINT = os.getenv(
+    'OIDC_OP_LOGOUT_ENDPOINT', 'https://iam.amsterdam.nl/auth/realms/datapunt-acc/protocol/openid-connect/logout')
