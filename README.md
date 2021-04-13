@@ -76,15 +76,15 @@ group membership based on keycloak roles.
 
     ```python
     OIDC_OP_AUTHORIZATION_ENDPOINT = os.getenv('OIDC_OP_AUTHORIZATION_ENDPOINT',
-        'https://iam.amsterdam.nl/auth/realms/datapunt-acc/protocol/openid-connect/auth')
+        'https://<keycloak-instance-base-url>/auth/realms/datapunt-acc/protocol/openid-connect/auth')
     OIDC_OP_TOKEN_ENDPOINT = os.getenv('OIDC_OP_TOKEN_ENDPOINT',
-        'https://iam.amsterdam.nl/auth/realms/datapunt-acc/protocol/openid-connect/token')
+        'https://<keycloak-instance-base-url>/auth/realms/datapunt-acc/protocol/openid-connect/token')
     OIDC_OP_USER_ENDPOINT = os.getenv('OIDC_OP_USER_ENDPOINT',
-        'https://iam.amsterdam.nl/auth/realms/datapunt-acc/protocol/openid-connect/userinfo')
+        'https://<keycloak-instance-base-url>/auth/realms/datapunt-acc/protocol/openid-connect/userinfo')
     OIDC_OP_JWKS_ENDPOINT = os.getenv('OIDC_OP_JWKS_ENDPOINT',
-        'https://iam.amsterdam.nl/auth/realms/datapunt-acc/protocol/openid-connect/certs')
+        'https://<keycloak-instance-base-url>/auth/realms/datapunt-acc/protocol/openid-connect/certs')
     OIDC_OP_LOGOUT_ENDPOINT = os.getenv('OIDC_OP_LOGOUT_ENDPOINT',
-        'https://iam.amsterdam.nl/auth/realms/datapunt-acc/protocol/openid-connect/logout')
+        'https://<keycloak-instance-base-url>/auth/realms/datapunt-acc/protocol/openid-connect/logout')
     ```
    
 8. When using Django-rest-framework, add the mozilla_django_oidc
